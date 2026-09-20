@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feedback-analyzer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: feedback-analyzer
+  template:
+    metadata:
+      labels:
+        app: feedback-analyzer
+    spec:
+      containers:
+        - name: feedback-analyzer
+          image: feedback-analyzer:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000

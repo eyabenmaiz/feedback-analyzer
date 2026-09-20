@@ -4,3 +4,5 @@ venv/
 .env
 *.db
 .pytest_cache/
+kubectl
+minikube-linux-amd64
