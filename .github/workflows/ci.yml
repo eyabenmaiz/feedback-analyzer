@@ -25,5 +25,5 @@ jobs:
         run: python -m pytest
 
       - name: Build Docker image
-        run: docker build -t feedback-analyzer
+        run: docker build -t feedback-analyzer .
 
