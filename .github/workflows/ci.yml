@@ -27,3 +27,6 @@ jobs:
       - name: Build Docker image
         run: docker build -t feedback-analyzer .
 
+      - name: Build UI Docker image
+        run: docker build -t feedback-ui ./ui
+
