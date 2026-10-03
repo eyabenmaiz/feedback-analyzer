@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feedback-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: feedback-ui
+  template:
+    metadata:
+      labels:
+        app: feedback-ui
+    spec:
+      containers:
+        - name: feedback-ui
+          image: feedback-ui:latest
+          imagePullPolicy: Never
+          env:
+            - name: API_URL
+              value: "http://feedback-analyzer-service"
+          ports:
+            - containerPort: 8501

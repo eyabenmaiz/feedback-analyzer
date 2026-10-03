@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: feedback-ui-service
+spec:
+  selector:
+    app: feedback-ui
+  ports:
+    - port: 80
+      targetPort: 8501
+  type: NodePort
